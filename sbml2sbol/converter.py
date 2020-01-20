@@ -10,7 +10,7 @@ To view a copy of this license, visit <http://opensource.org/licenses/MIT/>.
 import sys
 
 from sbol import setHomespace, ComponentDefinition, Document, Sequence, \
-    SO_CDS, SO_RBS, URIProperty
+    SO_CDS, SO_RBS, IntProperty, URIProperty
 
 _SO_ASS_COMP = 'http://identifiers.org/so/SO:0000143'
 
@@ -36,8 +36,7 @@ def _convert(uniprot_tirs):
 
             # Add placeholders for RBS and CDS:
             rbs = ComponentDefinition('%s_%s_rbs' % (uniprot, tir))
-            # rbs.addPropertyValue('rdf:resource', str(tir))
-            # Property(rbs, 'http://liverpool.ac.uk#tir', '0', '1', str(tir))
+            IntProperty(rbs, 'http://liverpool.ac.uk#tir', '0', '1', tir)
 
             cds = ComponentDefinition('%s_%s_cds' % (uniprot, tir))
 
