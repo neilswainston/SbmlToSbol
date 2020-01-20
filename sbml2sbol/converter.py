@@ -10,6 +10,7 @@ To view a copy of this license, visit <http://opensource.org/licenses/MIT/>.
 # pylint: disable=invalid-name
 # pylint: disable=too-many-nested-blocks
 from collections import defaultdict
+import os.path
 import sys
 
 import libsbml
@@ -25,6 +26,12 @@ def convert(sbml_filename, sbol_filename, pathway_id='rp_pathway'):
     rct_uniprot = _read_sbml(sbml_filename, pathway_id)
     tirs = [5000, 10000, 15000]
     doc = _convert(rct_uniprot, tirs)
+
+    dir_name = os.path.dirname(os.path.abspath(sbol_filename))
+
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+
     doc.write(sbol_filename)
 
 
