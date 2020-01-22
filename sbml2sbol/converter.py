@@ -14,12 +14,15 @@ import os.path
 import sys
 
 import libsbml
-from sbol import setHomespace, ComponentDefinition, Document, \
+from sbol import setHomespace, ComponentDefinition, Config, Document, \
     SO_CDS, SO_RBS, FloatProperty, URIProperty
 from synbiochem.utils import io_utils
 
 _SO_GENE = 'http://identifiers.org/so/SO:0000704'
 _SO_ASS_COMP = 'http://identifiers.org/so/SO:0000143'
+
+
+Config.setOption('validate', False)
 
 
 def convert(sbml_filepaths, sbol_filename, max_prot_per_react=3, tirs=None,
