@@ -15,17 +15,21 @@ import sys
 
 import libsbml
 from sbol import setHomespace, ComponentDefinition, Document, \
-    SO_CDS, SO_RBS, IntProperty, URIProperty
+    SO_CDS, SO_RBS, FloatProperty, URIProperty
+from synbiochem.utils import io_utils
 
 
 _SO_ASS_COMP = 'http://identifiers.org/so/SO:0000143'
 
 
-def convert(sbml_filename, sbol_filename, pathway_id='rp_pathway'):
+def convert(sbml_filepaths, sbol_filename, max_prot_per_react=3, tirs=None,
+            pathway_id='rp_pathway'):
     '''Convert.'''
-    rct_uniprot = _read_sbml(sbml_filename, pathway_id)
-    tirs = [5000, 10000, 15000]
-    doc = _convert(rct_uniprot, tirs)
+    tirs = [10000, 20000, 30000] if tirs is None else tirs
+
+    model_rct_uniprot = _read_sbml(sbml_filepaths, pathway_id)
+
+    doc = _convert(model_rct_uniprot, tirs, max_prot_per_react)
 
     dir_name = os.path.dirname(os.path.abspath(sbol_filename))
 
@@ -35,33 +39,35 @@ def convert(sbml_filename, sbol_filename, pathway_id='rp_pathway'):
     doc.write(sbol_filename)
 
 
-def _read_sbml(filename, pathway_id):
+def _read_sbml(sbml_filepaths, pathway_id):
     '''Read SBML.'''
-    document = libsbml.readSBMLFromFile(filename)
-    model = document.model
-    rp_pathway = model.getPlugin('groups').getGroup(pathway_id)
-
     rct_uniprot = defaultdict(list)
 
-    for member in rp_pathway.getListOfMembers():
-        if not member.getIdRef() == 'targetSink':
-            # Extract reaction annotation:
-            annot = model.getReaction(member.getIdRef()).getAnnotation()
-            bag = annot.getChild('RDF').getChild('BRSynth').getChild('brsynth')
+    for filename in io_utils.get_filenames(sbml_filepaths):
+        document = libsbml.readSBMLFromFile(filename)
+        rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
-            for i in range(bag.getNumChildren()):
-                ann = bag.getChild(i)
+        for member in rp_pathway.getListOfMembers():
+            if not member.getIdRef() == 'targetSink':
+                # Extract reaction annotation:
+                annot = document.model.getReaction(
+                    member.getIdRef()).getAnnotation()
+                bag = annot.getChild('RDF').getChild(
+                    'BRSynth').getChild('brsynth')
 
-                if ann.getName() == 'selenzyme':
-                    for j in range(ann.getNumChildren()):
-                        sel_ann = ann.getChild(j)
-                        rct_uniprot[member.getIdRef()].append(
-                            sel_ann.getName())
+                for i in range(bag.getNumChildren()):
+                    ann = bag.getChild(i)
+
+                    if ann.getName() == 'selenzyme':
+                        for j in range(ann.getNumChildren()):
+                            sel_ann = ann.getChild(j)
+                            rct_uniprot[member.getIdRef()].append(
+                                sel_ann.getName())
 
     return rct_uniprot
 
 
-def _convert(rct_uniprot, tirs):
+def _convert(rct_uniprot, tirs, max_prot_per_react):
     '''Convert.'''
     setHomespace('http://liverpool.ac.uk')
     doc = Document()
@@ -76,7 +82,7 @@ def _convert(rct_uniprot, tirs):
 
         doc.addComponentDefinition([_5p_assembly, _3p_assembly])
 
-        for uniprot_id in uniprot_ids_set:
+        for uniprot_id in uniprot_ids_set[:max_prot_per_react]:
             for tir in tirs:
                 # Add placeholder for top-level gene:
                 gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
@@ -85,7 +91,8 @@ def _convert(rct_uniprot, tirs):
                 rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
                 rbs.roles = SO_RBS
 
-                IntProperty(rbs, 'http://liverpool.ac.uk#tir', '0', '1', tir)
+                FloatProperty(
+                    rbs, 'http://liverpool.ac.uk#target_tir', '0', '1', tir)
 
                 cds = ComponentDefinition('%s_%s_cds' % (uniprot_id, tir))
                 cds.roles = SO_CDS
@@ -108,7 +115,7 @@ def _convert(rct_uniprot, tirs):
 
 def main(args):
     '''main method.'''
-    convert(args[0], args[1])
+    convert(args[1:], args[0])
 
 
 if __name__ == '__main__':
