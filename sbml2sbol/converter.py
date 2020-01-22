@@ -18,7 +18,7 @@ from sbol import setHomespace, ComponentDefinition, Document, \
     SO_CDS, SO_RBS, FloatProperty, URIProperty
 from synbiochem.utils import io_utils
 
-
+_SO_GENE = 'http://identifiers.org/so/SO:0000704'
 _SO_ASS_COMP = 'http://identifiers.org/so/SO:0000143'
 
 
@@ -86,6 +86,12 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
             for tir in tirs:
                 # Add placeholder for top-level gene:
                 gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
+                gene.roles = _SO_GENE
+
+                URIProperty(gene,
+                            'http://biomodels.net/biologyqualifiers#isInstanceOf',
+                            '0', '1',
+                            'http://identifiers.org/uniprot/%s' % uniprot_id)
 
                 # Add placeholders for RBS and CDS:
                 rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
