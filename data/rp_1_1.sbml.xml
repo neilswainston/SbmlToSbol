@@ -474,7 +474,6 @@
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/ec-code/1.13.11.1"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/P07773"/>
-                  <rdf:li rdf:resource="https://identifiers.org/uniprot/P81422"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/O33948"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/O33950"/>
                   <rdf:li rdf:resource="https://identifiers.org/uniprot/Q43984"/>
@@ -542,7 +541,6 @@
                 <brsynth:dfG_uncert units="kj_per_mol" value="0.0"/>
                 <brsynth:selenzyme>
                   <brsynth:P07773 value="89.9"/>
-                  <brsynth:P81422 value="89.9"/>
                   <brsynth:O33948 value="89.9"/>
                   <brsynth:O33950 value="89.9"/>
                   <brsynth:Q43984 value="89.8"/>
