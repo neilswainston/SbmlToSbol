@@ -91,25 +91,25 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
                 gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
                 gene.roles = _SO_GENE
 
-                URIProperty(gene,
-                            'http://biomodels.net/biologyqualifiers#isInstanceOf',
-                            '0', '1',
-                            'http://identifiers.org/uniprot/%s' % uniprot_id)
+                # URIProperty(gene,
+                #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
+                #            '0', '1',
+                #            'http://identifiers.org/uniprot/%s' % uniprot_id)
 
                 # Add placeholders for RBS and CDS:
                 rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
                 rbs.roles = SO_RBS
 
-                FloatProperty(
-                    rbs, 'http://liverpool.ac.uk#target_tir', '0', '1', tir)
+                # FloatProperty(
+                #    rbs, 'http://liverpool.ac.uk#target_tir', '0', '1', tir)
 
                 cds = ComponentDefinition('%s_%s_cds' % (uniprot_id, tir))
                 cds.roles = SO_CDS
 
-                URIProperty(cds,
-                            'http://biomodels.net/biologyqualifiers#isInstanceOf',
-                            '0', '1',
-                            'http://identifiers.org/uniprot/%s' % uniprot_id)
+                # URIProperty(cds,
+                #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
+                #            '0', '1',
+                #            'http://identifiers.org/uniprot/%s' % uniprot_id)
 
                 doc.addComponentDefinition([rbs, cds])
 
