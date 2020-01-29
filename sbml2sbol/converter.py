@@ -15,11 +15,8 @@ import sys
 
 import libsbml
 from sbol import setHomespace, ComponentDefinition, Config, Document, \
-    SO_CDS, SO_RBS, FloatProperty, URIProperty
-from synbiochem.utils import io_utils
-
-_SO_GENE = 'http://identifiers.org/so/SO:0000704'
-_SO_ASS_COMP = 'http://identifiers.org/so/SO:0000143'
+    SO_CDS, SO_RBS  # , FloatProperty, URIProperty
+from synbiochem.utils import io_utils, dna_utils
 
 
 Config.setOption('validate', False)
@@ -79,9 +76,9 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
         # Specify uniprot-specific assembly region placeholders:
         # (Provides consistent assembly sequence for each reaction group.)
         _5p_assembly = ComponentDefinition('%s_5_prime_assembly' % rct)
-        _5p_assembly.roles = _SO_ASS_COMP
+        _5p_assembly.roles = dna_utils.SO_ASS_COMP
         _3p_assembly = ComponentDefinition('%s_3_prime_assembly' % rct)
-        _3p_assembly.roles = _SO_ASS_COMP
+        _3p_assembly.roles = dna_utils.SO_ASS_COMP
 
         doc.addComponentDefinition([_5p_assembly, _3p_assembly])
 
@@ -89,7 +86,7 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
             for tir in tirs:
                 # Add placeholder for top-level gene:
                 gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
-                gene.roles = _SO_GENE
+                gene.roles = dna_utils.SO_GENE
 
                 # URIProperty(gene,
                 #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
