@@ -8,6 +8,7 @@ To view a copy of this license, visit <http://opensource.org/licenses/MIT/>.
 @author:  neilswainston
 '''
 # pylint: disable=invalid-name
+# pylint: disable=too-many-arguments
 # pylint: disable=too-many-nested-blocks
 from collections import defaultdict
 import os.path
@@ -22,10 +23,13 @@ from synbiochem.utils import io_utils, dna_utils
 Config.setOption('validate', False)
 
 
-def convert(sbml_filepaths, sbol_filename, max_prot_per_react=3, tirs=None,
-            pathway_id='rp_pathway'):
+def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
+            tirs=None, pathway_id='rp_pathway'):
     '''Convert.'''
-    tirs = [10000, 20000, 30000] if tirs is None else tirs
+    if rbs:
+        tirs = [10000, 20000, 30000] if tirs is None else tirs
+    else:
+        tirs = None
 
     model_rct_uniprot = _read_sbml(sbml_filepaths, pathway_id)
 
@@ -83,45 +87,59 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
         doc.addComponentDefinition([_5p_assembly, _3p_assembly])
 
         for uniprot_id in uniprot_ids_set[:max_prot_per_react]:
-            for tir in tirs:
-                # Add placeholder for top-level gene:
-                gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
-                gene.roles = dna_utils.SO_GENE
-
-                # URIProperty(gene,
-                #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
-                #            '0', '1',
-                #            'http://identifiers.org/uniprot/%s' % uniprot_id)
-
-                # Add placeholders for RBS and CDS:
-                rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
-                rbs.roles = SO_RBS
-
-                # FloatProperty(
-                #    rbs, 'http://liverpool.ac.uk#target_tir', '0', '1', tir)
-
-                cds = ComponentDefinition('%s_%s_cds' % (uniprot_id, tir))
-                cds.roles = SO_CDS
-
-                # URIProperty(cds,
-                #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
-                #            '0', '1',
-                #            'http://identifiers.org/uniprot/%s' % uniprot_id)
-
-                doc.addComponentDefinition([rbs, cds])
-
-                # Assemble gene from features:
-                doc.addComponentDefinition(gene)
-
-                gene.assemblePrimaryStructure(
-                    [_5p_assembly, rbs, cds, _3p_assembly])
+            if tirs:
+                for tir in tirs:
+                    _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly)
+            else:
+                _add_gene(doc, uniprot_id, None, _5p_assembly, _3p_assembly)
 
     return doc
 
 
+def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
+    '''Add gene.'''
+    # Add placeholder for top-level gene:
+    gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
+    gene.roles = dna_utils.SO_GENE
+
+    # URIProperty(gene,
+    #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
+    #            '0', '1',
+    #            'http://identifiers.org/uniprot/%s' % uniprot_id)
+
+    # Add placeholders for RBS and CDS:
+    if tir:
+        rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
+        rbs.roles = SO_RBS
+        doc.addComponentDefinition(rbs)
+    else:
+        rbs = None
+
+    # FloatProperty(
+    #    rbs, 'http://liverpool.ac.uk#target_tir', '0', '1', tir)
+
+    cds = ComponentDefinition('%s_%s_cds' % (uniprot_id, tir))
+    cds.roles = SO_CDS
+
+    # URIProperty(cds,
+    #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
+    #            '0', '1',
+    #            'http://identifiers.org/uniprot/%s' % uniprot_id)
+
+    doc.addComponentDefinition(cds)
+
+    # Assemble gene from features:
+    doc.addComponentDefinition(gene)
+
+    assembly = [_5p_assembly, rbs, cds, _3p_assembly] if rbs \
+        else [_5p_assembly, cds, _3p_assembly]
+
+    gene.assemblePrimaryStructure(assembly)
+
+
 def main(args):
     '''main method.'''
-    convert(args[1:], args[0])
+    convert(args[2:], args[1], args[0].lower() == 'true')
 
 
 if __name__ == '__main__':
