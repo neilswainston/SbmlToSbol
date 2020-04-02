@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:groups="http://www.sbml.org/sbml/level3/version1/groups/version1" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" level="3" version="1" groups:required="false" fbc:required="false">
+  <model metaid="_27636f0e9d7a03f98ab5926785198b8c" id="RP_model_3_2" name="RetroPath_Pathway_3_2" substanceUnits="mole" timeUnits="second" extentUnits="mole" fbc:strict="true">
+    <listOfUnitDefinitions>
+      <unitDefinition metaid="aebbce66773195cbd5d82838dda4f0ea" id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="gram" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition metaid="_0346858f65275ff01aa2ac815127e134" id="kj_per_mol">
+        <listOfUnits>
+          <unit kind="joule" exponent="1" scale="3" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="1" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="_76dd2c22b28f8e55d4f510dfee1ac1ce" sboTerm="SBO:0000290" id="MNXC3" name="cytosol" size="1" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#_76dd2c22b28f8e55d4f510dfee1ac1ce">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/name/cytosol"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed/cytosol"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed/c0"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed/c"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990917"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990788"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990783"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990753"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990733"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990730"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990728"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990723"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990701"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990673"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990658"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990657"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990633"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990588"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990574"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990565"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990500"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990499"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990463"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990457"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990334"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990330"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990329"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990316"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990257"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990252"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990235"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990233"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990232"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990231"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990230"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990229"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990228"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990221"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990220"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990205"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990202"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990201"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990200"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990198"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990140"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990133"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990070"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990061"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990008"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990006"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1990005"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1905721"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1905720"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1904813"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1904724"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1904564"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1904511"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1904115"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1903754"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1903145"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1903144"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1902507"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:1902502"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0120002"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0106002"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0101003"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0101002"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099738"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099568"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099524"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099523"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099522"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099503"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099501"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099078"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0099073"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098956"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098922"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098898"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098832"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098723"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098594"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098593"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098566"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098560"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098559"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098539"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0098538"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097721"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097654"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097634"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097633"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097632"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097547"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097512"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097495"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097489"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097488"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097487"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097486"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097443"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097433"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097422"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097361"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097342"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097234"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097233"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097232"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097209"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097208"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097169"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0097013"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090730"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090726"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090654"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090653"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090652"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090651"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0090569"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0080085"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0072559"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0072558"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0072557"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0072516"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0072380"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0072379"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071818"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071682"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071598"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071563"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071547"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071546"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071541"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071540"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071521"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071513"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071439"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071341"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071254"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071212"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071203"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0071075"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070993"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070992"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070937"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070826"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070821"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070820"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070768"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070766"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070695"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070554"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070441"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070422"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070382"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070381"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070356"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070355"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070319"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070214"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070118"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070117"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070116"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070115"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070114"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070113"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070112"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070111"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070088"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070083"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070082"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070081"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070068"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070067"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070066"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070065"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070049"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070048"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070047"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070046"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070045"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070044"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070033"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0070032"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061803"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061802"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061702"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061673"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061645"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061499"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061498"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061497"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061496"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061493"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061202"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061201"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0061200"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060473"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060418"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060417"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060293"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060205"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060204"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060203"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060202"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060201"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060200"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060199"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0060198"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0055120"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0055087"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0055038"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0055037"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0055028"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0048770"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0048501"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0048500"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0048494"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0048492"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0048471"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0046859"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045495"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045336"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045335"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045334"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045293"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045254"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045253"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045251"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045250"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045249"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045248"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045247"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045246"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045243"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045239"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045170"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045169"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0045009"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044842"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044841"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044840"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044797"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044599"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044450"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044449"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044448"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044445"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044444"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044440"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044438"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044433"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044391"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044354"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044353"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044352"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044312"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044310"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044227"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044223"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044222"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0044207"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043702"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043701"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043700"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043699"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043698"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043662"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043661"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043660"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043659"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043614"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043600"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043598"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043597"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043540"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043528"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043527"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043293"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043292"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043291"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043265"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043223"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043186"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0043034"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042827"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042788"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042735"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042718"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042717"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042716"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042709"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042599"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042589"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042588"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042587"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042584"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042583"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042581"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042579"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042566"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042470"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0042151"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036501"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036464"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036457"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036411"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036396"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036379"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036186"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036007"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0036000"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0035580"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0035579"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0035550"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034996"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034973"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034777"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034774"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034752"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034750"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034749"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034748"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034746"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034745"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034744"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034743"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034741"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034731"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034730"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034719"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034715"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034709"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034519"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034515"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034493"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034492"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034467"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034466"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034451"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034430"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034422"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034274"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034270"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034083"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034082"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034081"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0034045"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033675"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033596"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033391"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033291"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033290"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033282"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033254"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033162"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033150"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033118"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033117"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033116"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033110"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033107"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033095"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0033093"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032921"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032839"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032838"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032593"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032585"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032578"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032477"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032449"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032127"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032117"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032068"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032047"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032019"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0032009"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031907"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031906"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031905"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031904"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031903"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031902"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031901"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031680"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031674"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031673"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031672"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031633"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031615"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031612"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031609"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031606"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031603"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031600"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031597"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031592"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031562"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031561"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031560"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031515"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031500"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031430"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031417"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031416"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031415"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031414"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031410"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031313"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031251"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031250"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031209"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031201"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031093"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031092"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031091"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031089"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031088"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031085"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031084"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031083"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031082"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0031045"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030931"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030930"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030929"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030891"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030877"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030700"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030671"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030670"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030669"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030668"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030667"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030666"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030665"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030662"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030661"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030659"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030658"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030486"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030485"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030314"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030143"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030142"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030141"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030139"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030136"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030135"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030134"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030133"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030131"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030128"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030127"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030125"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030124"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030123"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030120"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030119"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030118"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030117"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030082"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030081"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030080"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030079"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030078"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030077"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030018"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030017"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0030016"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0022627"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0022626"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0022625"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0020026"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0019813"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0019812"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0019197"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0019037"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0018444"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0017109"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0017102"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0016528"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0016465"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0016282"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0016281"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0015935"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0015934"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0014705"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0012507"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0010494"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0010169"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0010009"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0010005"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009574"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009525"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009524"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009504"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009382"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009376"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009361"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009359"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009357"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009348"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009346"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009345"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009343"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009340"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009339"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009336"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009333"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009332"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009331"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009329"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009328"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009321"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009320"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009317"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0009316"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0008385"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0008352"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0008303"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0008275"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0008274"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0008074"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005971"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005969"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005968"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005965"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005964"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005960"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005951"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005950"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005948"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005946"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005945"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005938"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005883"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005881"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005863"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005859"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005854"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005853"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005852"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005851"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005850"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005840"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005836"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005835"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005833"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005832"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005831"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005829"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005825"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005824"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005823"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005822"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005821"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005814"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005793"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005786"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005771"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005770"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005769"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005768"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0005737"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0002186"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0002144"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0002096"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0002081"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0002079"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000932"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000931"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000930"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000927"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000924"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000809"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000789"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000787"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000407"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000345"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000308"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000242"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000235"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000229"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000177"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000164"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000153"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000145"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000133"/>
+                  <rdf:li rdf:resource="http://identifiers.org/go/GO:0000015"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.compartment/MNXC3"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.compartment/c_c"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.compartment/c"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#_76dd2c22b28f8e55d4f510dfee1ac1ce">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu"/>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="bd4d43cd44c800ecf0e034a6a579343c" id="MNXM220__64__MNXC3" name="CDP" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#bd4d43cd44c800ecf0e034a6a579343c">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd00096"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/CDP"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00112"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB01546"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:58069"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:41451"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:3260"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:23519"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:13254"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:17239"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM90125"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM497040"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM220"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/M_cdp"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/cdp"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#bd4d43cd44c800ecf0e034a6a579343c">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>[H]N=c1nc(O[H])n(C2([H])OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C([H])(O[H])C2([H])O[H])c([H])c1[H]</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/C9H15N3O11P2/c10-5-1-2-12(9(15)11-5)8-7(14)6(13)4(22-8)3-21-25(19,20)23-24(16,17)18/h1-2,4,6-8,13-14H,3H2,(H,19,20)(H2,10,11,15)(H2,16,17,18)</brsynth:inchi>
+                <brsynth:inchikey>ZWIADYZPOWUWEW-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-1752.4622585003992"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="-1769.5770960351203"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="0.0"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="c8ee3d8696d53d9299bce7ecae07a208" id="MNXM100__64__MNXC3" name="(2E)-geranyl diphosphate" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#c8ee3d8696d53d9299bce7ecae07a208">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd03476"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd00283"/>
+                  <rdf:li rdf:resource="http://identifiers.org/sabiork.compound/5050"/>
+                  <rdf:li rdf:resource="http://identifiers.org/sabiork.compound/1846"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-191409"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/GERANYL-PP"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00341"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB06506"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB02239"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB01560"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB01285"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:58057"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:5332"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:42877"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:24223"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:14299"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:17211"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM89953"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM89875"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM722811"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM525850"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM163557"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM100"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/M_grdp"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/grdp"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#c8ee3d8696d53d9299bce7ecae07a208">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>[H]OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H]</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/C10H20O7P2/c1-9(2)5-4-6-10(3)7-8-16-19(14,15)17-18(11,12)13/h5,7H,4,6,8H2,1-3H3,(H,14,15)(H2,11,12,13)</brsynth:inchi>
+                <brsynth:inchikey>GVVPGTZRZFNKDS-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-992.9752203211694"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="-1010.0900578558904"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="0.0"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="_468e2de0a857ab7ee8622c5e9f9c4da9" id="MNXM2__64__MNXC3" name="H2O" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#_468e2de0a857ab7ee8622c5e9f9c4da9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd27222"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd15275"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd00001"/>
+                  <rdf:li rdf:resource="http://identifiers.org/sabiork.compound/40"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-8851517"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-5693747"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-5668574"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-5278291"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-351603"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-29356"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-2022884"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-189422"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-1605715"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-141343"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-113521"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-113519"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-113518"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-109276"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/WATER"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/OXONIUM"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/OH"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/HYDROXYL-GROUP"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/CPD-15815"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.drug/D06322"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.compound/C01328"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.drug/D00001"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00001"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB02111"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB01039"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:33813"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:30490"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:29412"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:29356"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:5594"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:44641"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:13419"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:13365"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:16234"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:5585"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:44819"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:44701"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:44292"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:43228"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:42857"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:42043"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:27313"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:13352"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:10743"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:15377"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM89551"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM725472"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM724204"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM722958"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM56889"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM527231"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM145357"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM128935"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM11838"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM114753"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM114710"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM2"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/M_oh1"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/oh1"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/M_h2o"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/h2o"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#_468e2de0a857ab7ee8622c5e9f9c4da9">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>[H]O[H]</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/H2O/h1H2</brsynth:inchi>
+                <brsynth:inchikey>XLYOFNOQVPJJNP-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-157.62662963113732"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="-157.62662963113732"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="0.0"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="_76aec9c4390657d33b71dbc0bef4908b" id="TARGET_0000000001__64__MNXC3" name="TARGET_0000000001" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#_76aec9c4390657d33b71dbc0bef4908b">
+              <bqbiol:is>
+                <rdf:Bag/>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#_76aec9c4390657d33b71dbc0bef4908b">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>[H]OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H]</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/C10H18O/c1-9(2)5-4-6-10(3)7-8-11/h5,7,11H,4,6,8H2,1-3H3</brsynth:inchi>
+                <brsynth:inchikey>GLZPCOQZEFWAFX-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="763.5696382233582"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="746.4548006886372"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="8.652833385917374"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="_48b1dfa1573700cb13b0df76e76d96a9" id="CMPD_0000000003__64__MNXC3" name="CMPD_0000000003" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#_48b1dfa1573700cb13b0df76e76d96a9">
+              <bqbiol:is>
+                <rdf:Bag/>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#_48b1dfa1573700cb13b0df76e76d96a9">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>[H]OP(=O)(O[H])OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H]</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/C10H19O4P/c1-9(2)5-4-6-10(3)7-8-14-15(11,12)13/h5,7H,4,6,8H2,1-3H3,(H2,11,12,13)</brsynth:inchi>
+                <brsynth:inchikey>FFOWJDCTFSWUMJ-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="121.18752290515147"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="104.07268537043043"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="9.01533500166179"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="aee65b81ad558ed9794084908a355c46" id="MNXM63__64__MNXC3" name="CTP" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#aee65b81ad558ed9794084908a355c46">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd00052"/>
+                  <rdf:li rdf:resource="http://identifiers.org/sabiork.compound/1286"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-29470"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-110614"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-110577"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/CTP"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00063"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB00082"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:58231"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:37563"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:41675"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:3285"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:23522"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:13286"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:17677"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM89657"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM89619"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM507432"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM63"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/M_ctp"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/ctp"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#aee65b81ad558ed9794084908a355c46">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>N=c1ccn(C2OC(COP(=O)(O)OP(=O)(O)OP(=O)(O)O)C(O)C2O)c(O)n1</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/C9H16N3O14P3/c10-5-1-2-12(9(15)11-5)8-7(14)6(13)4(24-8)3-23-28(19,20)26-29(21,22)25-27(16,17)18/h1-2,4,6-8,13-14H,3H2,(H,19,20)(H,21,22)(H2,10,11,15)(H2,16,17,18)</brsynth:inchi>
+                <brsynth:inchikey>PCDQPRRSZKQHHS-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-2625.1282529762293"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="-2642.2430905109504"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="0.0"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="e60b0c4377bb8b976ae5da1fdb80b0a9" id="MNXM9__64__MNXC3" name="inorganic phosphate" compartment="MNXC3" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#e60b0c4377bb8b976ae5da1fdb80b0a9">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd27787"/>
+                  <rdf:li rdf:resource="http://identifiers.org/seed.compound/cpd00009"/>
+                  <rdf:li rdf:resource="http://identifiers.org/sabiork.compound/36"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-8851513"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-8851226"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-5228339"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-29372"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-113551"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-113550"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-113548"/>
+                  <rdf:li rdf:resource="http://identifiers.org/reactome/R-ALL-109277"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/Pi"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/PHOSPHATE-GROUP"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metacyc.compound/CPD-16459"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.drug/D05467"/>
+                  <rdf:li rdf:resource="http://identifiers.org/kegg.compound/C00009"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB02142"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB02105"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB05947"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB01429"/>
+                  <rdf:li rdf:resource="http://identifiers.org/hmdb/HMDB00973"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:43470"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:29139"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:43474"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:39739"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:29137"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:39745"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:35780"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:26078"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:26020"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:24838"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:7793"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:45024"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:14791"/>
+                  <rdf:li rdf:resource="http://identifiers.org/chebi/CHEBI:18367"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM96407"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM89555"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM75092"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM75089"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM75087"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM724200"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM724194"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM124920"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM107750"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM105629"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM104569"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM57425"/>
+                  <rdf:li rdf:resource="http://identifiers.org/metanetx.chemical/MNXM9"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/M_pi"/>
+                  <rdf:li rdf:resource="http://identifiers.org/bigg.metabolite/pi"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#e60b0c4377bb8b976ae5da1fdb80b0a9">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:smiles>O=P(O)(O)O</brsynth:smiles>
+                <brsynth:inchi>InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)</brsynth:inchi>
+                <brsynth:inchikey>NBIIXXVUZAFLBC-UHFFFAOYSA-N</brsynth:inchikey>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-1056.2216260724247"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="-1073.3364636071458"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="0.0"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="_6adf97f83acf6453d4a6a4b1070f3754" sboTerm="SBO:0000625" id="B_999999" value="999999" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter metaid="_6adf97f83acf6453d4a6a4b1070f3754" sboTerm="SBO:0000625" id="B_0" value="0" units="mmol_per_gDW_per_hr" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction metaid="_1188325172d10b08e3a79bf5c7db0b9c" sboTerm="SBO:0000185" id="RP1" reversible="true" fast="false" fbc:lowerFluxBound="B_0" fbc:upperFluxBound="B_999999">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#_1188325172d10b08e3a79bf5c7db0b9c">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/C5CTM8"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q1JDJ9"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/B0KUY1"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q0BTT3"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/C5D3Y4"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q7WLL4"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/A9L5I7"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q9KCP8"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q67ZM7"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q9VYT0"/>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/3.1.3"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#_1188325172d10b08e3a79bf5c7db0b9c">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:rule_id>RR-02-c7a4c6cc919dba99-16-F</brsynth:rule_id>
+                <brsynth:rule_ori_reac>
+                  <brsynth:mnxr value="MNXR114845"/>
+                </brsynth:rule_ori_reac>
+                <brsynth:rule_score value="0.45937502062503754"/>
+                <brsynth:path_id value="3"/>
+                <brsynth:step_id value="1"/>
+                <brsynth:sub_step_id value="2"/>
+                <brsynth:smiles>[H]OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H].O=P(O)(O)O&gt;&gt;[H]OP(=O)(O[H])OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H].[H]O[H]</brsynth:smiles>
+                <brsynth:fba_obj_biomass units="mmol_per_gDW_per_hr" value="0.0"/>
+                <brsynth:fba_obj_RP1_sink__restricted_biomass units="mmol_per_gDW_per_hr" value="1.071428571428565"/>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-256.2128811230806"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="-273.3277186578016"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="17.55073898933347"/>
+                <brsynth:norm_dfG_prime_m value="0.5569974451872823"/>
+                <brsynth:norm_dfG_uncert value="0.5393378377679291"/>
+                <brsynth:norm_dfG_prime_o value="0.5559583812622535"/>
+                <brsynth:norm_fba_obj_biomass value="0.0"/>
+                <brsynth:norm_fba_obj_RP1_sink__restricted_biomass value="0.357142857142855"/>
+                <brsynth:selenzyme>
+                  <brsynth:Q9VYT0 value="97.103"/>
+                  <brsynth:Q67ZM7 value="79.026"/>
+                  <brsynth:Q9KCP8 value="76.793"/>
+                  <brsynth:A9L5I7 value="76.793"/>
+                  <brsynth:Q7WLL4 value="76.793"/>
+                  <brsynth:C5D3Y4 value="76.793"/>
+                  <brsynth:Q0BTT3 value="76.793"/>
+                  <brsynth:B0KUY1 value="76.793"/>
+                  <brsynth:Q1JDJ9 value="76.793"/>
+                  <brsynth:C5CTM8 value="76.793"/>
+                </brsynth:selenzyme>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CMPD_0000000003__64__MNXC3" stoichiometry="1" constant="true"/>
+          <speciesReference species="MNXM2__64__MNXC3" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="TARGET_0000000001__64__MNXC3" stoichiometry="1" constant="true"/>
+          <speciesReference species="MNXM9__64__MNXC3" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="_56a73dc2ff8dc0141eba10f4f33af97d" sboTerm="SBO:0000185" id="RP2" reversible="true" fast="false" fbc:lowerFluxBound="B_0" fbc:upperFluxBound="B_999999">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#_56a73dc2ff8dc0141eba10f4f33af97d">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q9ZS34"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q44576"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q56770"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/P71241"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/P26406"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q48460"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q9ABR0"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q9CA67"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/Q67ZM7"/>
+                  <rdf:li rdf:resource="http://identifiers.org/uniprot/P76445"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#_56a73dc2ff8dc0141eba10f4f33af97d">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:rule_id>RR-02-52172ccd16523025-16-F</brsynth:rule_id>
+                <brsynth:rule_ori_reac>
+                  <brsynth:mnxr value="MNXR128939"/>
+                </brsynth:rule_ori_reac>
+                <brsynth:rule_score value="0.2697797707125414"/>
+                <brsynth:path_id value="3"/>
+                <brsynth:step_id value="2"/>
+                <brsynth:sub_step_id value="2"/>
+                <brsynth:smiles>[H]OP(=O)(O[H])OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H].N=c1ccn(C2OC(COP(=O)(O)OP(=O)(O)OP(=O)(O)O)C(O)C2O)c(O)n1&gt;&gt;[H]N=c1nc(O[H])n(C2([H])OC([H])(C([H])([H])OP(=O)(O[H])OP(=O)(O[H])O[H])C([H])(O[H])C2([H])O[H])c([H])c1[H].[H]OP(=O)(O[H])OP(=O)(O[H])OC([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])C([H])([H])C([H])=C(C([H])([H])[H])C([H])([H])[H]</brsynth:smiles>
+                <brsynth:fba_obj_biomass units="mmol_per_gDW_per_hr" value="0.0"/>
+                <brsynth:fba_obj_RP1_sink__restricted_biomass units="mmol_per_gDW_per_hr" value="1.071428571428565"/>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="241.49674875049095"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="241.49674875049095"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="9.01533500166179"/>
+                <brsynth:norm_dfG_prime_m value="0.5257417858378468"/>
+                <brsynth:norm_dfG_uncert value="0.5398560331846922"/>
+                <brsynth:norm_dfG_prime_o value="0.5257417858378468"/>
+                <brsynth:norm_fba_obj_biomass value="0.0"/>
+                <brsynth:norm_fba_obj_RP1_sink__restricted_biomass value="0.357142857142855"/>
+                <brsynth:selenzyme>
+                  <brsynth:P76445 value="70.842"/>
+                  <brsynth:Q67ZM7 value="68.032"/>
+                  <brsynth:Q9CA67 value="67.861"/>
+                  <brsynth:Q9ABR0 value="67.45"/>
+                  <brsynth:Q48460 value="67.25"/>
+                  <brsynth:P26406 value="67.25"/>
+                  <brsynth:P71241 value="67.19"/>
+                  <brsynth:Q56770 value="67.19"/>
+                  <brsynth:Q44576 value="66.99"/>
+                  <brsynth:Q9ZS34 value="66.72"/>
+                </brsynth:selenzyme>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MNXM100__64__MNXC3" stoichiometry="1" constant="true"/>
+          <speciesReference species="MNXM220__64__MNXC3" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CMPD_0000000003__64__MNXC3" stoichiometry="1" constant="true"/>
+          <speciesReference species="MNXM63__64__MNXC3" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction metaid="b98fe416ed3e9cb1d98745756bdc0f03" sboTerm="SBO:0000185" id="RP1_sink" reversible="true" fast="false" fbc:lowerFluxBound="B_0" fbc:upperFluxBound="B_999999">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:Description rdf:about="#b98fe416ed3e9cb1d98745756bdc0f03">
+              <bqbiol:is>
+                <rdf:Bag/>
+              </bqbiol:is>
+            </rdf:Description>
+            <rdf:BRSynth rdf:about="#b98fe416ed3e9cb1d98745756bdc0f03">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu"/>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="TARGET_0000000001__64__MNXC3" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+      </reaction>
+    </listOfReactions>
+    <groups:listOfGroups>
+      <groups:group metaid="f6370751b7d7e51be4a78651e904fd2c" groups:id="rp_pathway" groups:kind="collection">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:BRSynth rdf:about="#f6370751b7d7e51be4a78651e904fd2c">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:fba_obj_biomass units="mmol_per_gDW_per_hr" value="1.6317690198317107"/>
+                <brsynth:fba_obj_RP1_sink__restricted_biomass units="mmol_per_gDW_per_hr" value="1.071428571428565"/>
+                <brsynth:dfG_prime_o units="kj_per_mol" value="-14.716132372589982"/>
+                <brsynth:dfG_prime_m units="kj_per_mol" value="224.38191121576992"/>
+                <brsynth:dfG_uncert units="kj_per_mol" value="26.5280584084729"/>
+                <brsynth:norm_obj_biomass value="0.5439333333333333"/>
+                <brsynth:norm_obj_RP1_sink__restricted_biomass value="0.3571333333333333"/>
+                <brsynth:norm_dfG_prime_m value="0.5413696155125646"/>
+                <brsynth:norm_dfG_uncert value="0.5395969354763106"/>
+                <brsynth:norm_dfG_prime_o value="0.5408500835500502"/>
+                <brsynth:norm_steps value="0.8666666666666667"/>
+                <brsynth:norm_rule_scores value="2.7429018142103305"/>
+                <brsynth:global_score value="0.45728981141173586"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:idRef="RP1"/>
+          <groups:member groups:idRef="RP2"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group metaid="_2c184de7682298a1c6bba34dfc45a33b" groups:id="central_species" groups:kind="collection">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:BRSynth rdf:about="#_2c184de7682298a1c6bba34dfc45a33b">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu"/>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:idRef="MNXM220__64__MNXC3"/>
+          <groups:member groups:idRef="MNXM100__64__MNXC3"/>
+          <groups:member groups:idRef="MNXM2__64__MNXC3"/>
+          <groups:member groups:idRef="TARGET_0000000001__64__MNXC3"/>
+          <groups:member groups:idRef="CMPD_0000000003__64__MNXC3"/>
+        </groups:listOfMembers>
+      </groups:group>
+    </groups:listOfGroups>
+    <fbc:listOfObjectives fbc:activeObjective="obj_RP1_sink">
+      <fbc:objective fbc:id="obj_biomass" fbc:type="maximize">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:BRSynth rdf:about="#">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:flux_value units="mmol_per_gDW_per_hr" value="1.6317690198317107"/>
+                <brsynth:norm_flux_value value="0.5439333333333333"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective fbc:reaction="biomass" fbc:coefficient="1">
+            <annotation>
+              <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <rdf:BRSynth rdf:about="#">
+                  <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                    <brsynth:flux_value units="mmol_per_gDW_per_hr" value="1.6317690198317107"/>
+                    <brsynth:norm_flux_value value="0.5439333333333333"/>
+                  </brsynth:brsynth>
+                </rdf:BRSynth>
+              </rdf:RDF>
+            </annotation>
+          </fbc:fluxObjective>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+      <fbc:objective fbc:id="obj_RP1_sink__restricted_biomass" fbc:type="maximize">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:BRSynth rdf:about="#">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                <brsynth:flux_value units="mmol_per_gDW_per_hr" value="1.071428571428565"/>
+                <brsynth:norm_flux_value value="0.3571333333333333"/>
+              </brsynth:brsynth>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective metaid="_0ff56124a5783334f0d05d442c706bf7" fbc:reaction="RP1_sink" fbc:coefficient="1">
+            <annotation>
+              <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <rdf:BRSynth rdf:about="#_0ff56124a5783334f0d05d442c706bf7">
+                  <brsynth:brsynth xmlns:brsynth="http://brsynth.eu">
+                    <brsynth:flux_value units="mmol_per_gDW_per_hr" value="1.071428571428565"/>
+                    <brsynth:norm_flux_value value="0.3571333333333333"/>
+                  </brsynth:brsynth>
+                </rdf:BRSynth>
+              </rdf:RDF>
+            </annotation>
+          </fbc:fluxObjective>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+      <fbc:objective fbc:id="obj_RP1_sink" fbc:type="maximize">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+            <rdf:BRSynth rdf:about="#">
+              <brsynth:brsynth xmlns:brsynth="http://brsynth.eu"/>
+            </rdf:BRSynth>
+          </rdf:RDF>
+        </annotation>
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective metaid="_95a80923f2e42a75655d9ea635a433a8" fbc:reaction="RP1_sink" fbc:coefficient="1">
+            <annotation>
+              <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/">
+                <rdf:BRSynth rdf:about="#_95a80923f2e42a75655d9ea635a433a8">
+                  <brsynth:brsynth xmlns:brsynth="http://brsynth.eu"/>
+                </rdf:BRSynth>
+              </rdf:RDF>
+            </annotation>
+          </fbc:fluxObjective>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+    </fbc:listOfObjectives>
+  </model>
+</sbml>

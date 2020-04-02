@@ -126,10 +126,19 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
     #            '0', '1',
     #            'http://identifiers.org/uniprot/%s' % uniprot_id)
 
-    doc.addComponentDefinition(cds)
+    # Add ComponentDefintion if it has not yet been added:
+    if cds.identity not in [comp_def.identity
+                            for comp_def in doc.componentDefinitions]:
+        doc.addComponentDefinition(cds)
+    else:
+        cds = doc.getComponentDefinition(cds.identity)
 
     # Assemble gene from features:
-    doc.addComponentDefinition(gene)
+    if gene.identity not in [comp_def.identity
+                             for comp_def in doc.componentDefinitions]:
+        doc.addComponentDefinition(gene)
+    else:
+        gene = doc.getComponentDefinition(gene.identity)
 
     assembly = [_5p_assembly, rbs, cds, _3p_assembly] if rbs \
         else [_5p_assembly, cds, _3p_assembly]
