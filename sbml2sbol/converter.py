@@ -111,7 +111,7 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
     if tir:
         rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
         rbs.roles = SO_RBS
-        doc.addComponentDefinition(rbs)
+        rbs = _add_comp_def(doc, rbs)
     else:
         rbs = None
 
@@ -127,23 +127,26 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
     #            'http://identifiers.org/uniprot/%s' % uniprot_id)
 
     # Add ComponentDefintion if it has not yet been added:
-    if cds.identity not in [comp_def.identity
-                            for comp_def in doc.componentDefinitions]:
-        doc.addComponentDefinition(cds)
-    else:
-        cds = doc.getComponentDefinition(cds.identity)
+    cds = _add_comp_def(doc, cds)
 
     # Assemble gene from features:
-    if gene.identity not in [comp_def.identity
-                             for comp_def in doc.componentDefinitions]:
-        doc.addComponentDefinition(gene)
-    else:
-        gene = doc.getComponentDefinition(gene.identity)
+    gene = _add_comp_def(doc, gene)
 
     assembly = [_5p_assembly, rbs, cds, _3p_assembly] if rbs \
         else [_5p_assembly, cds, _3p_assembly]
 
     gene.assemblePrimaryStructure(assembly)
+
+
+def _add_comp_def(doc, comp_def):
+    '''Add component definition, checking if this already exists.'''
+    if comp_def.identity not in [comp_def.identity
+                                 for comp_def in doc.componentDefinitions]:
+        doc.addComponentDefinition(comp_def)
+    else:
+        comp_def = doc.getComponentDefinition(comp_def.identity)
+
+    return comp_def
 
 
 def main(args):
