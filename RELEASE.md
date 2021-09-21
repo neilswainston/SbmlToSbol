@@ -8,3 +8,5 @@
 - chore: filter only filenames ending with .xml
 - doc: add functions documentation
 - feat: add conda environment file
+- chore: add new files (version, main, Args)
+- feat: add new arguments
