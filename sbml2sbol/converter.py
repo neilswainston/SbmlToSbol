@@ -47,9 +47,9 @@ def _read_sbml(sbml_filepaths, pathway_id):
     '''Read SBML.'''
     rct_uniprot = defaultdict(list)
 
-    print(sbml_filepaths)
     for filename in io_utils.get_filenames(sbml_filepaths):
-        print(filename)
+        if not filename.endswith(".xml"):
+            continue
         document = libsbml.readSBMLFromFile(filename)
         rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
