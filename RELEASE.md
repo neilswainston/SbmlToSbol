@@ -7,4 +7,4 @@
 - chore: fit to new specs of rpSBML format
 - chore: filter only filenames ending with .xml
 - doc: add functions documentation
-
+- feat: add conda environment file
