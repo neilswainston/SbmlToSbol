@@ -10,3 +10,6 @@
 - feat: add conda environment file
 - chore: add new files (version, main, Args)
 - feat: add new arguments
+- doc(README): add infos
+- build(requirements.txt): switch from pySBOL to sbol2
+- test: add test file
