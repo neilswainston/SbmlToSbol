@@ -76,21 +76,20 @@ def _read_sbml(sbml_filepaths, pathway_id):
         rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
         for member in rp_pathway.getListOfMembers():
-            if not member.getIdRef() == 'targetSink':
-                # Extract reaction annotation:
-                annot = document.model.getReaction(
-                    member.getIdRef()).getAnnotation()
-                bag = annot.getChild('RDF').getChild(
-                    'BRSynth').getChild('brsynth')
+            # Extract reaction annotation:
+            annot = document.model.getReaction(
+                member.getIdRef()).getAnnotation()
+            bag = annot.getChild('RDF').getChild(
+                'BRSynth').getChild('brsynth')
 
-                for i in range(bag.getNumChildren()):
-                    ann = bag.getChild(i)
+            for i in range(bag.getNumChildren()):
+                ann = bag.getChild(i)
 
-                    if ann.getName() == 'selenzyme':
-                        for j in range(ann.getNumChildren()):
-                            sel_ann = ann.getChild(j)
-                            rct_uniprot[member.getIdRef()].append(
-                                sel_ann.getName())
+                if ann.getName() == 'selenzy':
+                    for j in range(ann.getNumChildren()):
+                        sel_ann = ann.getChild(j)
+                        rct_uniprot[member.getIdRef()].append(
+                            sel_ann.getName())
 
     return rct_uniprot
 
