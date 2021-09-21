@@ -15,7 +15,7 @@ import os.path
 import sys
 
 import libsbml
-from sbol import setHomespace, ComponentDefinition, Config, Document, \
+from sbol2 import setHomespace, ComponentDefinition, Config, Document, \
     SO_CDS, SO_RBS  # , FloatProperty, URIProperty
 from synbiochem.utils import io_utils, dna_utils
 
@@ -47,7 +47,9 @@ def _read_sbml(sbml_filepaths, pathway_id):
     '''Read SBML.'''
     rct_uniprot = defaultdict(list)
 
+    print(sbml_filepaths)
     for filename in io_utils.get_filenames(sbml_filepaths):
+        print(filename)
         document = libsbml.readSBMLFromFile(filename)
         rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
