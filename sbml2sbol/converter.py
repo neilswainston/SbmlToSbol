@@ -12,19 +12,44 @@ To view a copy of this license, visit <http://opensource.org/licenses/MIT/>.
 # pylint: disable=too-many-nested-blocks
 from collections import defaultdict
 import os.path
-import sys
-
-import libsbml
-from sbol2 import setHomespace, ComponentDefinition, Config, Document, \
-    SO_CDS, SO_RBS  # , FloatProperty, URIProperty
-from synbiochem.utils import io_utils, dna_utils
-
+from typing import (
+    List,
+    Dict
+)
+from libsbml import readSBMLFromFile
+from sbol2 import (
+    setHomespace,
+    ComponentDefinition,
+    Config,
+    Document,
+    SO_CDS,
+    SO_RBS,
+    # FloatProperty,
+    # URIProperty
+)
+from synbiochem.utils import (
+    io_utils,
+    dna_utils
+)
+from .Args import(
+    DEFAULT_RBS,
+    DEFAULT_MAX_PROT_PER_REACT,
+    DEFAULT_TIRS,
+    DEFAULT_PATHWAY_ID,
+    DEFAULT_UNIPROTID_KEY
+)
 
 Config.setOption('validate', False)
 
-
-def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
-            tirs=None, pathway_id='rp_pathway'):
+def convert(
+    sbml_filepaths: str,
+    sbol_filename: str,
+    rbs: bool = DEFAULT_RBS,
+    max_prot_per_react: int = DEFAULT_MAX_PROT_PER_REACT,
+    tirs: List[int] = DEFAULT_TIRS,
+    pathway_id: str = DEFAULT_PATHWAY_ID,
+    uniprotID_key: str = DEFAULT_UNIPROTID_KEY
+) -> None:
     """Convert an rpSBML file to a SBOL file
     :param sbml_filepaths: The path to the rpSBML file
     :param sbol_filename: The path to the SBOL file
@@ -46,7 +71,11 @@ def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
     else:
         tirs = None
 
-    model_rct_uniprot = _read_sbml(sbml_filepaths, pathway_id)
+    model_rct_uniprot = _read_sbml(
+        sbml_filepaths=sbml_filepaths,
+        pathway_id=pathway_id,
+        uniprotID_key=uniprotID_key
+    )
 
     doc = _convert(model_rct_uniprot, tirs, max_prot_per_react)
 
@@ -58,7 +87,11 @@ def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
     doc.write(sbol_filename)
 
 
-def _read_sbml(sbml_filepaths, pathway_id):
+def _read_sbml(
+    sbml_filepaths: str,
+    pathway_id: str,
+    uniprotID_key: str
+) -> Dict[str, str]:
     """Read an rpSBML file
     :param sbml_filepaths: The path to the rpSBML file
     :param pathway_id: The Groups id of the heterologous pathway
@@ -72,7 +105,7 @@ def _read_sbml(sbml_filepaths, pathway_id):
     for filename in io_utils.get_filenames(sbml_filepaths):
         if not filename.endswith(".xml"):
             continue
-        document = libsbml.readSBMLFromFile(filename)
+        document = readSBMLFromFile(filename)
         rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
         for member in rp_pathway.getListOfMembers():
@@ -85,7 +118,7 @@ def _read_sbml(sbml_filepaths, pathway_id):
             for i in range(bag.getNumChildren()):
                 ann = bag.getChild(i)
 
-                if ann.getName() == 'selenzy':
+                if ann.getName() == uniprotID_key:
                     for j in range(ann.getNumChildren()):
                         sel_ann = ann.getChild(j)
                         rct_uniprot[member.getIdRef()].append(
@@ -204,19 +237,3 @@ def _add_comp_def(doc, comp_def):
         comp_def = doc.getComponentDefinition(comp_def.identity)
 
     return comp_def
-
-
-def main(args):
-    """Access the conversion using the command line
-    :param args: Arguments
-    
-    :type args: list
-    
-    :rtype: None
-    :return: None
-    """
-    convert(args[2:], args[1], args[0].lower() == 'true')
-
-
-if __name__ == '__main__':
-    main(sys.argv[1:])
