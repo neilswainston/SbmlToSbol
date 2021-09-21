@@ -1,5 +1,4 @@
 from collections import defaultdict
-from typing import DefaultDict, Dict
 from unittest import TestCase
 from os import path as os_path
 from json import load as json_load
