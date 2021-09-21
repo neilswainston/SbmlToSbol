@@ -237,3 +237,22 @@ def _add_comp_def(doc, comp_def):
         comp_def = doc.getComponentDefinition(comp_def.identity)
 
     return comp_def
+<<<<<<< HEAD
+=======
+
+
+# def main(args):
+#     """Access the conversion using the command line
+#     :param args: Arguments
+    
+#     :type args: list
+    
+#     :rtype: None
+#     :return: None
+#     """
+#     convert(args[2:], args[1], args[0].lower() == 'true')
+
+
+# if __name__ == '__main__':
+#     main(sys.argv[1:])
+>>>>>>> 1151b474b71dd5690e3595d9d1599af2d4c97aec
