@@ -25,7 +25,22 @@ Config.setOption('validate', False)
 
 def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
             tirs=None, pathway_id='rp_pathway'):
-    '''Convert.'''
+    """Convert an rpSBML file to a SBOL file
+    :param sbml_filepaths: The path to the rpSBML file
+    :param sbol_filename: The path to the SBOL file
+    :param rbs: Calculate or not the RBS strength
+    :param max_prot_per_react: The maximum number of proteins per reaction (Default: 3)
+    :param tirs: The RBS strength values
+    :param pathway_id: The Groups id of the heterologous pathway
+    :type sbml_filepaths: str
+    :type sbol_filename: str
+    :type rbs: bool
+    :type max_prot_per_react: int
+    :type tirs: list
+    :type pathway_id: str
+    :rtype: None
+    :return: None
+    """
     if rbs:
         tirs = [10000, 20000, 30000] if tirs is None else tirs
     else:
@@ -44,7 +59,14 @@ def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
 
 
 def _read_sbml(sbml_filepaths, pathway_id):
-    '''Read SBML.'''
+    """Read an rpSBML file
+    :param sbml_filepaths: The path to the rpSBML file
+    :param pathway_id: The Groups id of the heterologous pathway
+    :type sbml_filepaths: str
+    :type pathway_id: str
+    :rtype: dict
+    :return: The collection of UNIPROT id's contained within a rpSBML file
+    """
     rct_uniprot = defaultdict(list)
 
     for filename in io_utils.get_filenames(sbml_filepaths):
@@ -74,7 +96,17 @@ def _read_sbml(sbml_filepaths, pathway_id):
 
 
 def _convert(rct_uniprot, tirs, max_prot_per_react):
-    '''Convert.'''
+    """Convert the collection of UNIPROT id's within a rpSBML file to sequences
+    :param rct_uniprot: The dict result of UNIPROT id's from a rpSBML
+    :param tirs: The RBS strength values
+    :param max_prot_per_react: The maximum number of proteins per reaction (Default: 3)
+    :type rct_uniprot: dict
+    :type max_prot_per_react: int
+    :type rbs: bool
+    :type tirs: list
+    :rtype: Document 
+    :return: The SBOL document object
+    """
     setHomespace('http://liverpool.ac.uk')
     doc = Document()
 
@@ -99,7 +131,22 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
 
 
 def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
-    '''Add gene.'''
+    """Add the gene to the appropriate SBOL placeholders
+    :param doc: SBOL document object
+    :param uniprot_id: The list of uniprot id's 
+    :param tir: The rbs strenth list
+    :param _5p_assembly: 5 prime dna assembly region placeholder
+    :param _3p_assembly: 3 prime dna assembly region placeholder
+    
+    :type doc: Document
+    :type uniprot_id: list
+    :type tir: list
+    :type _5p_assembly: dna_utils.SO_ASS_COMP
+    :type _3p_assembly: dna_utils.SO_ASS_COMP
+    
+    :rtype: None
+    :return: None
+    """
     # Add placeholder for top-level gene:
     gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
     gene.roles = dna_utils.SO_GENE
@@ -141,7 +188,16 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
 
 
 def _add_comp_def(doc, comp_def):
-    '''Add component definition, checking if this already exists.'''
+    """Add the component definition while checking if it already exists
+    :param doc: The SBOL Document object
+    :param comp_def: Component definition
+    
+    :type doc: Document
+    :type comp_def: ComponentDefinition
+    
+    :rtype: ComponentDefinition
+    :return: The updated component definition
+    """
     if comp_def.identity not in [comp_def.identity
                                  for comp_def in doc.componentDefinitions]:
         doc.addComponentDefinition(comp_def)
@@ -152,7 +208,14 @@ def _add_comp_def(doc, comp_def):
 
 
 def main(args):
-    '''main method.'''
+    """Access the conversion using the command line
+    :param args: Arguments
+    
+    :type args: list
+    
+    :rtype: None
+    :return: None
+    """
     convert(args[2:], args[1], args[0].lower() == 'true')
 
 
