@@ -1,0 +1,7 @@
+name: sbml2sbol
+channels:
+  - conda-forge
+dependencies:
+  - python-libsbml
+  - pysbol2
+  - synbiochem-py
