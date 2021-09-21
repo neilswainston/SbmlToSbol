@@ -12,6 +12,10 @@ To view a copy of this license, visit <http://opensource.org/licenses/MIT/>.
 # pylint: disable=too-many-nested-blocks
 from collections import defaultdict
 import os.path
+<<<<<<< HEAD
+=======
+# import sys
+>>>>>>> 1151b474b71dd5690e3595d9d1599af2d4c97aec
 from typing import (
     List,
     Dict
@@ -255,4 +259,7 @@ def _add_comp_def(doc, comp_def):
 
 # if __name__ == '__main__':
 #     main(sys.argv[1:])
+<<<<<<< HEAD
+>>>>>>> 1151b474b71dd5690e3595d9d1599af2d4c97aec
+=======
 >>>>>>> 1151b474b71dd5690e3595d9d1599af2d4c97aec
