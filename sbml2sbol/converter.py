@@ -91,7 +91,7 @@ def _read_sbml(
     sbml_filepaths: str,
     pathway_id: str,
     uniprotID_key: str
-) -> Dict[str, str]:
+) -> Dict[str, List[str]]:
     """Read an rpSBML file
     :param sbml_filepaths: The path to the rpSBML file
     :param pathway_id: The Groups id of the heterologous pathway
