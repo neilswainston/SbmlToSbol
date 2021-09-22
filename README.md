@@ -26,7 +26,7 @@ conda run --name sbml2sbol <command>
 ```
 where command is the one below.
 
-Run in a terminal:
+Then, run in a terminal:
 ```
 python -m sbml2sbol --input tests/data --outfile pathway.sbol
 ```
