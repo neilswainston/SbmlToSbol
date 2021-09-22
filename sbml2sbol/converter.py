@@ -12,26 +12,70 @@ To view a copy of this license, visit <http://opensource.org/licenses/MIT/>.
 # pylint: disable=too-many-nested-blocks
 from collections import defaultdict
 import os.path
-import sys
-
-import libsbml
-from sbol import setHomespace, ComponentDefinition, Config, Document, \
-    SO_CDS, SO_RBS  # , FloatProperty, URIProperty
-from synbiochem.utils import io_utils, dna_utils
-
+from typing import (
+    List,
+    Dict
+)
+from libsbml import readSBMLFromFile
+from sbol2 import (
+    setHomespace,
+    ComponentDefinition,
+    Config,
+    Document,
+    SO_CDS,
+    SO_RBS,
+    # FloatProperty,
+    # URIProperty
+)
+from synbiochem.utils import (
+    io_utils,
+    dna_utils
+)
+from .Args import(
+    DEFAULT_RBS,
+    DEFAULT_MAX_PROT_PER_REACT,
+    DEFAULT_TIRS,
+    DEFAULT_PATHWAY_ID,
+    DEFAULT_UNIPROTID_KEY
+)
 
 Config.setOption('validate', False)
 
-
-def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
-            tirs=None, pathway_id='rp_pathway'):
-    '''Convert.'''
+def convert(
+    sbml_filepaths: str,
+    sbol_filename: str,
+    rbs: bool = DEFAULT_RBS,
+    max_prot_per_react: int = DEFAULT_MAX_PROT_PER_REACT,
+    tirs: List[int] = DEFAULT_TIRS,
+    pathway_id: str = DEFAULT_PATHWAY_ID,
+    uniprotID_key: str = DEFAULT_UNIPROTID_KEY
+) -> None:
+    """Convert an rpSBML file to a SBOL file
+    :param sbml_filepaths: The path to the rpSBML file
+    :param sbol_filename: The path to the SBOL file
+    :param rbs: Calculate or not the RBS strength
+    :param max_prot_per_react: The maximum number of proteins per reaction (Default: 3)
+    :param tirs: The RBS strength values
+    :param pathway_id: The Groups id of the heterologous pathway
+    :type sbml_filepaths: str
+    :type sbol_filename: str
+    :type rbs: bool
+    :type max_prot_per_react: int
+    :type tirs: list
+    :type pathway_id: str
+    :rtype: None
+    :return: None
+    """
     if rbs:
         tirs = [10000, 20000, 30000] if tirs is None else tirs
     else:
         tirs = None
 
-    model_rct_uniprot = _read_sbml(sbml_filepaths, pathway_id)
+    model_rct_uniprot = _read_sbml(
+        sbml_filepaths=sbml_filepaths,
+        pathway_id=pathway_id,
+        uniprotID_key=uniprotID_key
+    )
 
     doc = _convert(model_rct_uniprot, tirs, max_prot_per_react)
 
@@ -43,36 +87,58 @@ def convert(sbml_filepaths, sbol_filename, rbs, max_prot_per_react=3,
     doc.write(sbol_filename)
 
 
-def _read_sbml(sbml_filepaths, pathway_id):
-    '''Read SBML.'''
+def _read_sbml(
+    sbml_filepaths: str,
+    pathway_id: str,
+    uniprotID_key: str
+) -> Dict[str, List[str]]:
+    """Read an rpSBML file
+    :param sbml_filepaths: The path to the rpSBML file
+    :param pathway_id: The Groups id of the heterologous pathway
+    :type sbml_filepaths: str
+    :type pathway_id: str
+    :rtype: dict
+    :return: The collection of UNIPROT id's contained within a rpSBML file
+    """
     rct_uniprot = defaultdict(list)
 
     for filename in io_utils.get_filenames(sbml_filepaths):
-        document = libsbml.readSBMLFromFile(filename)
+        if not filename.endswith(".xml"):
+            continue
+        document = readSBMLFromFile(filename)
         rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
         for member in rp_pathway.getListOfMembers():
-            if not member.getIdRef() == 'targetSink':
-                # Extract reaction annotation:
-                annot = document.model.getReaction(
-                    member.getIdRef()).getAnnotation()
-                bag = annot.getChild('RDF').getChild(
-                    'BRSynth').getChild('brsynth')
+            # Extract reaction annotation:
+            annot = document.model.getReaction(
+                member.getIdRef()).getAnnotation()
+            bag = annot.getChild('RDF').getChild(
+                'BRSynth').getChild('brsynth')
 
-                for i in range(bag.getNumChildren()):
-                    ann = bag.getChild(i)
+            for i in range(bag.getNumChildren()):
+                ann = bag.getChild(i)
 
-                    if ann.getName() == 'selenzyme':
-                        for j in range(ann.getNumChildren()):
-                            sel_ann = ann.getChild(j)
-                            rct_uniprot[member.getIdRef()].append(
-                                sel_ann.getName())
+                if ann.getName() == uniprotID_key:
+                    for j in range(ann.getNumChildren()):
+                        sel_ann = ann.getChild(j)
+                        rct_uniprot[member.getIdRef()].append(
+                            sel_ann.getName())
 
     return rct_uniprot
 
 
 def _convert(rct_uniprot, tirs, max_prot_per_react):
-    '''Convert.'''
+    """Convert the collection of UNIPROT id's within a rpSBML file to sequences
+    :param rct_uniprot: The dict result of UNIPROT id's from a rpSBML
+    :param tirs: The RBS strength values
+    :param max_prot_per_react: The maximum number of proteins per reaction (Default: 3)
+    :type rct_uniprot: dict
+    :type max_prot_per_react: int
+    :type rbs: bool
+    :type tirs: list
+    :rtype: Document 
+    :return: The SBOL document object
+    """
     setHomespace('http://liverpool.ac.uk')
     doc = Document()
 
@@ -97,7 +163,22 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
 
 
 def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
-    '''Add gene.'''
+    """Add the gene to the appropriate SBOL placeholders
+    :param doc: SBOL document object
+    :param uniprot_id: The list of uniprot id's 
+    :param tir: The rbs strenth list
+    :param _5p_assembly: 5 prime dna assembly region placeholder
+    :param _3p_assembly: 3 prime dna assembly region placeholder
+    
+    :type doc: Document
+    :type uniprot_id: list
+    :type tir: list
+    :type _5p_assembly: dna_utils.SO_ASS_COMP
+    :type _3p_assembly: dna_utils.SO_ASS_COMP
+    
+    :rtype: None
+    :return: None
+    """
     # Add placeholder for top-level gene:
     gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
     gene.roles = dna_utils.SO_GENE
@@ -139,7 +220,16 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
 
 
 def _add_comp_def(doc, comp_def):
-    '''Add component definition, checking if this already exists.'''
+    """Add the component definition while checking if it already exists
+    :param doc: The SBOL Document object
+    :param comp_def: Component definition
+    
+    :type doc: Document
+    :type comp_def: ComponentDefinition
+    
+    :rtype: ComponentDefinition
+    :return: The updated component definition
+    """
     if comp_def.identity not in [comp_def.identity
                                  for comp_def in doc.componentDefinitions]:
         doc.addComponentDefinition(comp_def)
@@ -147,12 +237,3 @@ def _add_comp_def(doc, comp_def):
         comp_def = doc.getComponentDefinition(comp_def.identity)
 
     return comp_def
-
-
-def main(args):
-    '''main method.'''
-    convert(args[2:], args[1], args[0].lower() == 'true')
-
-
-if __name__ == '__main__':
-    main(sys.argv[1:])
