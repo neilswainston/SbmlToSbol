@@ -34,7 +34,7 @@ else
     RBS=$3
 fi
 
-docker run -v $INPUT:/data -v $OUTPUT_DIR:$OUTPUT_DIR sbml2sbol \
+docker run --rm -v $INPUT:/data -v $OUTPUT_DIR:$OUTPUT_DIR sbml2sbol \
     --input /data \
     --outfile $OUTFILE \
     --rbs $RBS
