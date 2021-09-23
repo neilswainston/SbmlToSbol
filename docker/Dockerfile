@@ -11,4 +11,4 @@ RUN pip install --upgrade pip \
   && pip install -r requirements.txt
   
 # Set ENTRYPOINT:
-ENTRYPOINT ["python", "-u", "sbml2sbol/converter.py"]
+ENTRYPOINT ["python", "-u", "-m", "sbml2sbol"]

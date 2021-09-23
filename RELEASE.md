@@ -1,5 +1,9 @@
 # Release history
 
+## 0.2.1
+#### Sep 23 2021
+- change the way to run Docker (doc updated)
+
 ## 0.2.0
 #### Sep 21 2021
 - chore: add RELEASE file

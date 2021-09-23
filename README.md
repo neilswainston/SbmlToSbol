@@ -28,16 +28,16 @@ where command is the one below.
 
 Then, run in a terminal:
 ```
-python -m sbml2sbol --input tests/data --outfile pathway.sbol
+python -m sbml2sbol --input tests/data --outfile result.sbol
 ```
 
 ## Docker
 
-1. From the console, type `bash docker_build.sh` to build the Docker image.
-2. To run, type `bash docker_run.sh`. The file `docker_run.sh` contains the command line arguments as follows:
-    * `True` Boolean flag, specifying whether an RBS site should be added to each gene.
-    * `/out/sbol.xml` The output file.
-    * `/data` The directory containing in input files (in SBML format - essentially the output from Selenzyme).
+1. From the console, type `bash docker/build.sh` to build the Docker image.
+2. To run, type `bash docker/run.sh`. The file `docker/run.sh` expect the following command line arguments:
+    * `input_folder` The directory (with absolute path) containing in input files (in SBML format - essentially the output from Selenzyme).
+    * `outfile` The output filename (with absolute path).
+    * `RBS` (optional) Boolean flag, specifying whether an RBS site should be added to each gene (default: True).
 
 
 ## Test
