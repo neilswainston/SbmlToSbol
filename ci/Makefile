@@ -2,7 +2,7 @@ SHELL := /bin/bash
 SELF_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 PACKAGE = $(shell python ../setup.py --name)
 
-include $(SELF_DIR)/.env
+include $(SELF_DIR)/.ci_env
 
 
 # HELP
