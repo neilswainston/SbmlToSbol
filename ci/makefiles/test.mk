@@ -1,4 +1,4 @@
-include ../.env
+include ../.ci_env
 
 SHELL := /bin/bash
 
