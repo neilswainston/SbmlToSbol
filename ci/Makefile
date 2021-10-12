@@ -41,14 +41,14 @@ ifneq ($(strip $(env)),)
 endif
 	@$(MAKE_CMD) -f conda.mk build-environment-$* env=$(env)
 
-%-inconda: ## Test conda package
-ifneq ($(strip $(env)),)
-	$(eval env=${PACKAGE}_$*)
-endif
-	@$(MAKE_CMD) -f conda.mk check-environment-$* env=$(env)
-	@$(MAKE_CMD) -f conda.mk conda-run-env env=$(env) \
-										   cmd="make -C .. $*" \
-										   args="$(args)"
+# %-inconda: ## Test conda package
+# ifneq ($(strip $(env)),)
+# 	$(eval env=${PACKAGE}_$*)
+# endif
+# 	@$(MAKE_CMD) -f conda.mk check-environment-$* env=$(env)
+# 	@$(MAKE_CMD) -f conda.mk conda-run-env env=$(env) \
+# 										   cmd="make -C .. $*" \
+# 										   args="$(args)"
 
 
 conda-all: conda-build conda-test conda-convert conda-publish ## (default) Perform all conda process (build, test, convert, publish)
