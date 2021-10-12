@@ -2,12 +2,16 @@
 
 ## [Unreleased](https://github.com/neilswainston/sbmltosbol/tree/HEAD)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.3...HEAD)
+[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.4...HEAD)
 
 **Merged pull requests:**
 
 - Docker [\#2](https://github.com/neilswainston/SbmlToSbol/pull/2) ([breakthewall](https://github.com/breakthewall))
 - Updates to fit rpSBML new specs [\#1](https://github.com/neilswainston/SbmlToSbol/pull/1) ([breakthewall](https://github.com/breakthewall))
+
+## [0.0.4](https://github.com/neilswainston/sbmltosbol/tree/0.0.4) (2021-10-12)
+
+[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.3...0.0.4)
 
 ## [0.0.3](https://github.com/neilswainston/sbmltosbol/tree/0.0.3) (2021-10-12)
 
