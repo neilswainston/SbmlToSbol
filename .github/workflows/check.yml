@@ -31,4 +31,5 @@ jobs:
     - name: Checking package
       run: |
         cd ci
-        make check-inconda
+        make check-buildenv env=check
+        conda run -n check make check
