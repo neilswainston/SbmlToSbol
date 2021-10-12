@@ -27,5 +27,6 @@ def entry_point():
         uniprotID_key=args.uniprotID_key
     )
 
+
 if __name__ == '__main__':
     entry_point()
