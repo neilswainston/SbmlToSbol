@@ -31,5 +31,5 @@ jobs:
     - name: Testing package
       run: |
         cd ci
-        make check-buildenv env=test
+        make test-buildenv env=test
         conda run -n test make test
