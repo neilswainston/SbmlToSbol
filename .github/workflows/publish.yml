@@ -67,7 +67,7 @@ jobs:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gem install github_changelog_generator
-          github_changelog_generator -u neilswainston -p sbmltosbol
+          github_changelog_generator -u neilswainston -p sbmltosbol --no-unreleased
       - name: Update _version.py
         env:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
