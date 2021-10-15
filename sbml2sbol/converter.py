@@ -103,8 +103,8 @@ def _read_sbml(
     rct_uniprot = defaultdict(list)
 
     for filename in io_utils.get_filenames(sbml_filepaths):
-        if not filename.endswith(".xml"):
-            continue
+        # if not filename.endswith(".xml"):
+        #     continue
         document = readSBMLFromFile(filename)
         rp_pathway = document.model.getPlugin('groups').getGroup(pathway_id)
 
