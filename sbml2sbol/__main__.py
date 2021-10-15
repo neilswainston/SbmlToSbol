@@ -1,6 +1,3 @@
-from os import (
-    path as os_path,
-)
 from logging import Logger
 from .Args import build_args_parser
 from .converter import convert
