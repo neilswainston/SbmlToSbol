@@ -117,12 +117,14 @@ def _read_sbml(
 
             for i in range(bag.getNumChildren()):
                 ann = bag.getChild(i)
-
-                if ann.getName() == uniprotID_key:
-                    for j in range(ann.getNumChildren()):
-                        sel_ann = ann.getChild(j)
-                        rct_uniprot[member.getIdRef()].append(
-                            sel_ann.getName())
+                if ann.getName().startswith(uniprotID_key):
+                    rct_uniprot[member.getIdRef()].append(
+                        ann.getName().split('_')[1]
+                    )
+                    # for j in range(ann.getNumChildren()):
+                    #     sel_ann = ann.getChild(j)
+                    #     rct_uniprot[member.getIdRef()].append(
+                    #         sel_ann.getName())
 
     return rct_uniprot
 

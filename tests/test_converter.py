@@ -21,7 +21,7 @@ class Test_Converter(TestCase):
     )
     pathway_file = os_path.join(
         files_folder,
-        'pathway.xml'
+        'lycopene.xml'
     )
 
     def test_read_sbml(self):
