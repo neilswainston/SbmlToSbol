@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.0](https://github.com/neilswainston/sbmltosbol/tree/0.1.0) (2021-10-21)
+
+[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.5...0.1.0)
+
 ## [0.0.5](https://github.com/neilswainston/sbmltosbol/tree/0.0.5) (2021-10-12)
 
 [Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.4...0.0.5)
@@ -19,6 +23,11 @@
 ## [0.0.1](https://github.com/neilswainston/sbmltosbol/tree/0.0.1) (2021-10-12)
 
 [Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/ba317f8cea4e18702283063b1cc018a27d4ecc98...0.0.1)
+
+**Merged pull requests:**
+
+- Docker [\#2](https://github.com/neilswainston/SbmlToSbol/pull/2) ([breakthewall](https://github.com/breakthewall))
+- Updates to fit rpSBML new specs [\#1](https://github.com/neilswainston/SbmlToSbol/pull/1) ([breakthewall](https://github.com/breakthewall))
 
 
 
