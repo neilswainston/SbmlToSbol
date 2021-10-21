@@ -97,7 +97,7 @@ jobs:
       - name: Checkout feedstock fork
         uses: actions/checkout@v2
         with:
-          repository: conda-forge/sbmltosbol-feedstock
+          repository: conda-forge/sbml2sbol-feedstock
           persist-credentials: false
           fetch-depth: 0
       - name: Update recipe
@@ -118,4 +118,4 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.FEEDSTOCK }}
-          push-to-fork: brsynth/sbmltosbol-feedstock
+          push-to-fork: brsynth/sbml2sbol-feedstock
