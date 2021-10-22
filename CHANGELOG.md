@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.7](https://github.com/neilswainston/sbmltosbol/tree/0.1.7) (2021-10-22)
+
+[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.6...0.1.7)
+
 ## [0.1.6](https://github.com/neilswainston/sbmltosbol/tree/0.1.6) (2021-10-22)
 
 [Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.5...0.1.6)
