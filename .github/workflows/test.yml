@@ -30,6 +30,6 @@ jobs:
 
     - name: Testing package
       run: |
-        cd ci
+        cd cicd-toolkit
         make test-buildenv env=test
         conda run -n test make test
