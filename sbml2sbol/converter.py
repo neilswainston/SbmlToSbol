@@ -39,7 +39,6 @@ from .Args import(
     DEFAULT_UNIPROTID_KEY
 )
 
-
 Config.setOption('validate', False)
 
 

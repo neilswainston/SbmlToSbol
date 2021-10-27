@@ -76,7 +76,9 @@ jobs:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gem install github_changelog_generator
-          github_changelog_generator --no-unreleased
+          AUTH=$(echo $GITHUB_REPOSITORY | sed -e 's/\// /g' | awk '{print "--user " $1 " --project " $2}')
+          echo $AUTH
+          github_changelog_generator $AUTH --no-unreleased
       - name: Update _version.py
         env:
           TAG: ${{ steps.tag_version.outputs.new_tag }}
