@@ -18,13 +18,20 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get -y install make
+    - name: Checkout CI/CD Toolkit
+      uses: actions/checkout@v2
+      with:
+        repository: breakthewall/cicd-toolkit
+        path: cicd-toolkit
+        persist-credentials: false
+        fetch-depth: 0
     - name: Build conda package
       run: |
-        cd ci
+        cd cicd-toolkit
         make conda-build
     - name: Test conda package
       run: |
-        cd ci
+        cd cicd-toolkit
         make conda-test
 
   Tag:
