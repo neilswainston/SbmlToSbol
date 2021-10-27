@@ -1,5 +1,6 @@
 name: Tag
 
+
 on:
   push:
     branches:
@@ -7,6 +8,7 @@ on:
     paths:
       - '**.py'
       - '!tests/**'
+
 
 jobs:
 
@@ -74,10 +76,9 @@ jobs:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gem install github_changelog_generator
-          github_changelog_generator -u neilswainston -p sbmltosbol --no-unreleased
+          github_changelog_generator --no-unreleased
       - name: Update _version.py
         env:
-          CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ steps.tag_version.outputs.new_tag }}
         run: |
           folder=`dirname $(find . -name _version.py)`
@@ -100,34 +101,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
-
-  # ## UPDATE CONDA-FORGE FEEDSTOCK
-  # Feedstock:
-  #   needs: [Tag]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout feedstock fork
-  #       uses: actions/checkout@v2
-  #       with:
-  #         repository: conda-forge/sbml2sbol-feedstock
-  #         persist-credentials: false
-  #         fetch-depth: 0
-  #     - name: Update recipe
-  #       run: |
-  #         wget -O- https://github.com/neilswainston/sbmltosbol/archive/refs/tags/$VERSION.tar.gz | shasum -a 256 > sha.txt
-  #         sha=`python -c "f = open('sha.txt'); print(f.read().split()[0]); f.close()"`
-  #         rm -f sha.txt
-  #         sed -i -E "s/(\{% set version = \")[^>]+(\" %\})/\1$VERSION\2/" recipe/meta.yaml
-  #         sed -i -E "s/(sha256: )[^>]+/\1$sha/" recipe/meta.yaml
-  #         git config --local user.email "$GITHUB_EMAIL"
-  #         git config --local user.name "$GITHUB_USERNAME"
-  #         git commit -m "chore(meta.yml): update version" -a
-  #       env:
-  #         GITHUB_USERNAME: breakthewall
-  #         GITHUB_EMAIL: joan.herisson@univ-evry.fr
-  #         VERSION: ${{ needs.tag.outputs.new_tag }}
-  #     - name: Create Pull Request
-  #       uses: peter-evans/create-pull-request@v3
-  #       # with:
-  #         # token: ${{ secrets.FEEDSTOCK }}
-  #         # push-to-fork: brsynth/sbml2sbol-feedstock
