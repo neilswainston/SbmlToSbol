@@ -1,64 +1,72 @@
 # Changelog
 
-## [0.1.9](https://github.com/neilswainston/sbmltosbol/tree/0.1.9) (2021-10-27)
+## [0.1.11](https://github.com/neilswainston/SbmlToSbol/tree/0.1.11) (2021-10-27)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.8...0.1.9)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.10...0.1.11)
 
-## [0.1.8](https://github.com/neilswainston/sbmltosbol/tree/0.1.8) (2021-10-25)
+## [0.1.10](https://github.com/neilswainston/SbmlToSbol/tree/0.1.10) (2021-10-27)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.7...0.1.8)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.9...0.1.10)
 
-## [0.1.7](https://github.com/neilswainston/sbmltosbol/tree/0.1.7) (2021-10-22)
+## [0.1.9](https://github.com/neilswainston/SbmlToSbol/tree/0.1.9) (2021-10-27)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.6...0.1.7)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.8...0.1.9)
 
-## [0.1.6](https://github.com/neilswainston/sbmltosbol/tree/0.1.6) (2021-10-22)
+## [0.1.8](https://github.com/neilswainston/SbmlToSbol/tree/0.1.8) (2021-10-25)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.5...0.1.6)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.7...0.1.8)
 
-## [0.1.5](https://github.com/neilswainston/sbmltosbol/tree/0.1.5) (2021-10-22)
+## [0.1.7](https://github.com/neilswainston/SbmlToSbol/tree/0.1.7) (2021-10-22)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.4...0.1.5)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.6...0.1.7)
 
-## [0.1.4](https://github.com/neilswainston/sbmltosbol/tree/0.1.4) (2021-10-22)
+## [0.1.6](https://github.com/neilswainston/SbmlToSbol/tree/0.1.6) (2021-10-22)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.3...0.1.4)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.5...0.1.6)
 
-## [0.1.3](https://github.com/neilswainston/sbmltosbol/tree/0.1.3) (2021-10-21)
+## [0.1.5](https://github.com/neilswainston/SbmlToSbol/tree/0.1.5) (2021-10-22)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.2...0.1.3)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.4...0.1.5)
 
-## [0.1.2](https://github.com/neilswainston/sbmltosbol/tree/0.1.2) (2021-10-21)
+## [0.1.4](https://github.com/neilswainston/SbmlToSbol/tree/0.1.4) (2021-10-22)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.0...0.1.2)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.3...0.1.4)
 
-## [0.1.0](https://github.com/neilswainston/sbmltosbol/tree/0.1.0) (2021-10-21)
+## [0.1.3](https://github.com/neilswainston/SbmlToSbol/tree/0.1.3) (2021-10-21)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.1.1...0.1.0)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.2...0.1.3)
 
-## [0.1.1](https://github.com/neilswainston/sbmltosbol/tree/0.1.1) (2021-10-21)
+## [0.1.2](https://github.com/neilswainston/SbmlToSbol/tree/0.1.2) (2021-10-21)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.5...0.1.1)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.0...0.1.2)
 
-## [0.0.5](https://github.com/neilswainston/sbmltosbol/tree/0.0.5) (2021-10-12)
+## [0.1.0](https://github.com/neilswainston/SbmlToSbol/tree/0.1.0) (2021-10-21)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.4...0.0.5)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.1...0.1.0)
 
-## [0.0.4](https://github.com/neilswainston/sbmltosbol/tree/0.0.4) (2021-10-12)
+## [0.1.1](https://github.com/neilswainston/SbmlToSbol/tree/0.1.1) (2021-10-21)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.3...0.0.4)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.0.5...0.1.1)
 
-## [0.0.3](https://github.com/neilswainston/sbmltosbol/tree/0.0.3) (2021-10-12)
+## [0.0.5](https://github.com/neilswainston/SbmlToSbol/tree/0.0.5) (2021-10-12)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.2...0.0.3)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.0.4...0.0.5)
 
-## [0.0.2](https://github.com/neilswainston/sbmltosbol/tree/0.0.2) (2021-10-12)
+## [0.0.4](https://github.com/neilswainston/SbmlToSbol/tree/0.0.4) (2021-10-12)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/0.0.1...0.0.2)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.0.3...0.0.4)
 
-## [0.0.1](https://github.com/neilswainston/sbmltosbol/tree/0.0.1) (2021-10-12)
+## [0.0.3](https://github.com/neilswainston/SbmlToSbol/tree/0.0.3) (2021-10-12)
 
-[Full Changelog](https://github.com/neilswainston/sbmltosbol/compare/ba317f8cea4e18702283063b1cc018a27d4ecc98...0.0.1)
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.0.2...0.0.3)
+
+## [0.0.2](https://github.com/neilswainston/SbmlToSbol/tree/0.0.2) (2021-10-12)
+
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.0.1...0.0.2)
+
+## [0.0.1](https://github.com/neilswainston/SbmlToSbol/tree/0.0.1) (2021-10-12)
+
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/ba317f8cea4e18702283063b1cc018a27d4ecc98...0.0.1)
 
 **Merged pull requests:**
 
