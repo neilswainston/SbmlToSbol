@@ -17,7 +17,7 @@ from typing import (
     Dict
 )
 from libsbml import readSBMLFromFile
-from sbol2 import (
+from sbol import (
     setHomespace,
     ComponentDefinition,
     Config,
