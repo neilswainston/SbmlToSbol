@@ -13,7 +13,8 @@ class Test_Converter(TestCase):
 
     files_folder = os_path.join(
         'tests',
-        'data'
+        'data',
+        'input'
     )
     model_rct_uniprot_file = os_path.join(
         files_folder,
