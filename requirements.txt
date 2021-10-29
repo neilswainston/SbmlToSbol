@@ -1,3 +1,3 @@
 python-libsbml
-sbol2
+pySBOL
 synbiochem-py
