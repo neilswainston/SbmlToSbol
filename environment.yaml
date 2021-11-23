@@ -5,7 +5,4 @@ dependencies:
   - python=3.7
   - python-libsbml
   - synbiochem-py
-  - libxslt
-  - pip
-  - pip:
-    - pysbol
+  - requests
