@@ -64,10 +64,10 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           miniconda-version: "latest"
-          environment-file: cicd-toolkit/recipe/conda_build_env.yaml
           activate-environment: test
       - name: Building & Testing conda package
         run: |
+          conda install -y -c conda-forge conda-build
           conda-build cicd-toolkit/recipe
 
   Tag:
