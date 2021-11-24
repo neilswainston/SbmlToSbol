@@ -41,7 +41,6 @@ from .Args import(
 
 Config.setOption('validate', False)
 
-
 def convert(
     sbml_filepaths: str,
     sbol_filename: str,
