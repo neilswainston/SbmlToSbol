@@ -68,8 +68,8 @@ jobs:
       - name: Building & Testing conda package
         run: |
           conda install -y -c conda-forge conda-build
-          cat cicd-toolkit/recipe/meta.yaml
-          conda-build cicd-toolkit/recipe
+          cd cicd-toolkit
+          make conda-build
 
   Tag:
     needs: [Conda-Build]
