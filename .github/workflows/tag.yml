@@ -68,8 +68,7 @@ jobs:
       - name: Building & Testing conda package
         run: |
           conda install -y -c conda-forge conda-build
-          cd cicd-toolkit
-          make conda-build
+          conda-build cicd-toolkit/recipe  --channel conda-forge --override-channels
 
   Tag:
     needs: [Conda-Build]
