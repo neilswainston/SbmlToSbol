@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.13](https://github.com/neilswainston/SbmlToSbol/tree/0.1.13) (2021-12-09)
+
+[Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.12...0.1.13)
+
 ## [0.1.12](https://github.com/neilswainston/SbmlToSbol/tree/0.1.12) (2021-11-24)
 
 [Full Changelog](https://github.com/neilswainston/SbmlToSbol/compare/0.1.11...0.1.12)
