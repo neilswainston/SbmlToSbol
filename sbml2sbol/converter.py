@@ -17,16 +17,17 @@ from typing import (
     Dict
 )
 from libsbml import readSBMLFromFile
-from .sbol import (
-    setHomespace,
-    ComponentDefinition,
-    Config,
-    Document,
-    SO_CDS,
-    SO_RBS,
-    # FloatProperty,
-    # URIProperty
-)
+from sbml2sbol import sbol
+# from sbol2 import (
+#     setHomespace,
+#     ComponentDefinition,
+#     Config,
+#     Document,
+#     SO_CDS,
+#     SO_RBS,
+#     # FloatProperty,
+#     # URIProperty
+# )
 from synbiochem.utils import (
     io_utils,
     dna_utils
@@ -39,7 +40,7 @@ from .Args import(
     DEFAULT_UNIPROTID_KEY
 )
 
-Config.setOption('validate', False)
+sbol.Config.setOption('validate', False)
 
 def convert(
     sbml_filepaths: str,
@@ -141,15 +142,15 @@ def _convert(rct_uniprot, tirs, max_prot_per_react):
     :rtype: Document 
     :return: The SBOL document object
     """
-    setHomespace('http://liverpool.ac.uk')
-    doc = Document()
+    sbol.setHomespace('http://liverpool.ac.uk')
+    doc = sbol.Document()
 
     for rct, uniprot_ids_set in rct_uniprot.items():
         # Specify uniprot-specific assembly region placeholders:
         # (Provides consistent assembly sequence for each reaction group.)
-        _5p_assembly = ComponentDefinition('%s_5_prime_assembly' % rct)
+        _5p_assembly = sbol.ComponentDefinition('%s_5_prime_assembly' % rct)
         _5p_assembly.roles = dna_utils.SO_ASS_COMP
-        _3p_assembly = ComponentDefinition('%s_3_prime_assembly' % rct)
+        _3p_assembly = sbol.ComponentDefinition('%s_3_prime_assembly' % rct)
         _3p_assembly.roles = dna_utils.SO_ASS_COMP
 
         doc.addComponentDefinition([_5p_assembly, _3p_assembly])
@@ -182,7 +183,7 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
     :return: None
     """
     # Add placeholder for top-level gene:
-    gene = ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
+    gene = sbol.ComponentDefinition('%s_%s_gene' % (uniprot_id, tir))
     gene.roles = dna_utils.SO_GENE
 
     # URIProperty(gene,
@@ -192,8 +193,8 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
 
     # Add placeholders for RBS and CDS:
     if tir:
-        rbs = ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
-        rbs.roles = SO_RBS
+        rbs = sbol.ComponentDefinition('%s_%s_rbs' % (uniprot_id, tir))
+        rbs.roles = sbol.SO_RBS
         rbs = _add_comp_def(doc, rbs)
     else:
         rbs = None
@@ -201,8 +202,8 @@ def _add_gene(doc, uniprot_id, tir, _5p_assembly, _3p_assembly):
     # FloatProperty(
     #    rbs, 'http://liverpool.ac.uk#target_tir', '0', '1', tir)
 
-    cds = ComponentDefinition('%s_%s_cds' % (uniprot_id, tir))
-    cds.roles = SO_CDS
+    cds = sbol.ComponentDefinition('%s_%s_cds' % (uniprot_id, tir))
+    cds.roles = sbol.SO_CDS
 
     # URIProperty(cds,
     #            'http://biomodels.net/biologyqualifiers#isInstanceOf',
