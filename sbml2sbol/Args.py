@@ -6,6 +6,8 @@ DEFAULT_MAX_PROT_PER_REACT = 3
 DEFAULT_TIRS = None
 DEFAULT_PATHWAY_ID = 'rp_pathway'
 DEFAULT_UNIPROTID_KEY = 'selenzy'
+MIN_max_prot_per_react = 1
+MAX_max_prot_per_react = 20
 
 def build_args_parser(
     prog: str,
@@ -48,6 +50,8 @@ def add_arguments(parser: ArgumentParser) -> ArgumentParser:
     parser.add_argument(
         '--max_prot_per_react',
         type=int,
+        choices=range(MIN_max_prot_per_react, MAX_max_prot_per_react+1),
+        metavar=f'[{MIN_max_prot_per_react}-{MAX_max_prot_per_react}]',
         default=DEFAULT_MAX_PROT_PER_REACT,
         help=f'The maximum number of proteins per reaction (default: {DEFAULT_MAX_PROT_PER_REACT})'
     )
